@@ -4,8 +4,8 @@
 
 ###### Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html;
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
-  <img alt="Shows an illustrated sun in light color mode and a moon with stars in dark color mode." src="https://drive.google.com/file/d/1AgnyrkQ-irYvZXoCUTJ82eSFvx0nhahR/view?usp=sharing">
+  <source media="(prefers-color-scheme: light)" srcset="https://drive.google.com/file/d/1AgnyrkQ-irYvZXoCUTJ82eSFvx0nhahR/view?usp=sharing">
+  <img alt="Bagan client request and response" src="https://drive.google.com/file/d/1AgnyrkQ-irYvZXoCUTJ82eSFvx0nhahR/view?usp=sharing">
 </picture>
 berkas html merupakan sebuah text file berisi template untuk menampilkan tampilan pada laman web.
 urls.py mengembalikan elemen urlpatterns untuk mengakses laman pada aplikasi yang kita buat.
