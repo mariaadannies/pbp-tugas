@@ -3,7 +3,7 @@
 
 
 #### Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html;
-bagan: https://pbp-tugas-2.herokuapp.com/
+bagan: https://drive.google.com/file/d/1AgnyrkQ-irYvZXoCUTJ82eSFvx0nhahR/view?usp=sharing
 
 berkas html merupakan sebuah text file berisi template untuk menampilkan tampilan pada laman web.
 
