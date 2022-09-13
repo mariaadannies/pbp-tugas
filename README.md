@@ -14,7 +14,7 @@ views.py berisi fungsi yang bertugas menerima web request dan mengembalikan web 
 models.py berisi informasi esensial mengenai data yang tersimpan.
 
 #### Jelaskan kenapa menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
-Virtual environment berfungsi untuk mengisolasi suatu environments dimana setiap versi yang terunduh hanya terunduh pada environment tertentu. Kita tetap bisa membuat aplikasi web berbasis Django tanpa menggunakan virtual environment.
+Virtual environment berfungsi untuk mengisolasi suatu environments dimana setiap versi yang terunduh hanya terunduh pada environment tertentu. Kita tetap bisa membuat aplikasi web berbasis Django tanpa menggunakan virtual environment namun disarankan agar package lebih terorganisir dan membantu menjaga konsistensi versi sistem.
 
 #### Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
 1. Membuat fungsi untuk mengambil model yang akan ditampilkan pada html.
