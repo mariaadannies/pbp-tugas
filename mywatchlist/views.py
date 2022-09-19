@@ -5,6 +5,11 @@ from django.core import serializers
 
 # Create your views here.
 def show_mywatchlist(request):
+    data_mywatchlist = MyWatchList.objects.all()
+    context = {
+        'list_watchlist': data_mywatchlist,
+    }
+
     return render(request, "mywatchlist.html", context)
 
 def show_xml(request):
@@ -27,7 +32,3 @@ def show_xml_id(request, id):
 
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
-data_mywatchlist = MyWatchList.objects.all()
-context = {
-    'list_watchlist': data_mywatchlist,
-}
