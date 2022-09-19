@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table style="width:100%;">
+    <tr>
+        <th>Nama Barang</th>
+        <th>Harga Barang</th>
+        <th>Deskripsi</th>
+    </tr>
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+    
+    {% for a in list_watchlist %}
+    <tr>
+        <th>{{a.title}}</th>
+        <th>{{a.watched}}</th>
+        <th>{{a.rating}}</th>
+        <th>{{a.release_date}}</th>
+        <th>{{a.review}}</th>
+
+    </tr>
+    <br>
+    
+{% endfor %}
+</table>
+
+
+{% endblock content %}
