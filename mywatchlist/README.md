@@ -27,7 +27,7 @@ Perbedaan XML dan HTML:
 3. XML memiliki karakteristik berupa case sensitive sementara HTML bersifat case insensitive.
 4. XML mendukung penggunaan namespaces sementara HTML tidak.
 5. XML lebih strict dalam penggunaan closing tag dibandingkan dengan HTML.
-6. TAg pada XML bersifat extensible dan bukan merupakan predefined tag sementara HTML memiliki tag yang terbatas serta merupakan predefined tag.
+6. Tag pada XML bersifat extensible dan bukan merupakan predefined tag sementara HTML memiliki tag yang terbatas serta merupakan predefined tag.
 
 Perbedaan JSON dan HTML:
 1. JSON merupakan sebuah bahasa yang umumnya digunakan untuk menyimpan dan mentransfer data sementara HTML merupakan sebuah bahasa yang digunakan untuk menampilkan struktur dan konten dari sebuah halaman web.
