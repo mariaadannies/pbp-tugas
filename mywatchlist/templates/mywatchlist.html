@@ -18,7 +18,6 @@
         <th>Release Date</th>
         <th>Review</th>
     </tr>
-    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
     
     {% for a in list_watchlist %}
     <tr>
@@ -27,11 +26,11 @@
         <th>{{a.rating}}</th>
         <th>{{a.release_date}}</th>
         <th>{{a.review}}</th>
-
     </tr>
     <br>
     
 {% endfor %}
+
 </table>
 
 
