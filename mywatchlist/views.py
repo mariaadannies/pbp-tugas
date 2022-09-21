@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.core import serializers
 
 # Create your views here.
-def show_mywatchlist(request):
+def show_html(request):
     data_mywatchlist = MyWatchList.objects.all()
     context = {
         'list_watchlist': data_mywatchlist,
