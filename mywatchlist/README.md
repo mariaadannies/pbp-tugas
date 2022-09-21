@@ -70,7 +70,7 @@ Membuat folder fixture berisi file initial_mywatchlist_data.json yang berisi
 6. Membuat routing sehingga data di atas dapat diakses melalui URL
 Mengimport fungasi yang telah dibuat pada urls.py dan menambahkan path url ke dalam urpatterns untuk mengakses fungasi yang sudah diimpor.
 
-# Screenshot Postman
+# Postman
 ## HTML
 ![postman html](assets/pbp-tugas3-html.png)
 ## JSON
