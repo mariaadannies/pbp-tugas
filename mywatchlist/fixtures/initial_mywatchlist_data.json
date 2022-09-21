@@ -36,7 +36,7 @@
         "model": "mywatchlist.mywatchlist",
         "pk": 4,
         "fields": {
-            "watched": "Ya",
+            "watched": "Tidak",
             "title": "Up",
             "rating": 5,
             "release_date": "03/03/2003",

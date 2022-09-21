@@ -71,7 +71,9 @@ Membuat folder fixture berisi file initial_mywatchlist_data.json yang berisi
 Mengimport fungasi yang telah dibuat pada urls.py dan menambahkan path url ke dalam urpatterns untuk mengakses fungasi yang sudah diimpor.
 
 # Screenshot Postman
+## HTML
+![postman html](assets/pbp-tugas3-html.png)
 ## JSON
-![postman json](../assets/pbp-tugas3-json.png)
+![postman json](assets/pbp-tugas3-json.png)
 ## XML
-![postman xml](../assets/pbp-tugas3-xml.png)
+![postman xml](assets/pbp-tugas3-xml.png)
