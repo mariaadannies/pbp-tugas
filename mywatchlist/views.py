@@ -3,7 +3,6 @@ from mywatchlist.models import MyWatchList
 from django.http import HttpResponse
 from django.core import serializers
 
-# Create your views here.
 def show_mywatchlist(request):    
     return render(request, "mywatchlist.html", context)
 
