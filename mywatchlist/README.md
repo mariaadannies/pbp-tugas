@@ -1,4 +1,4 @@
-## Jelaskan perbedaan antara JSON, XML, dan HTML!
+# Jelaskan perbedaan antara JSON, XML, dan HTML!
 HTML merupakan sebuah markup language untuk dokumen yang didesain untuk ditampilkan pada web browser. 
 
 XML merupakan suatu markup language yang didesain untuk menyimpan data. XML banyak digunakan untuk mentransfer data. XML bersifat case sensitive.
@@ -34,10 +34,10 @@ Perbedaan JSON dan HTML:
 2. JSON bersifat lebih fleksibel dibandingkan dengan HTML.
 JSON memudahkan developer dalam menyimpan data yang bersifat lebih kompleks.
 
-## Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+# Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 Dalam mengembangkan suatu platform, memiliki data yang terkonsolidasi dalam suatu repositori menjadi suatu hal yang penting untuk kebutuhan analisis. Ada kalanya juga, beberapa data berada pada stack yang berbeda sehingga perlu ditransfer dari satu stack ke stack yang lainnya.
 
-## sJelaskan bagaimana cara kamu mengimplementasikan checklist di atas
+# Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas
 1. Membuat suatu aplikasi baru bernama mywatchlist di proyek Django Tugas 2 pekan lalu
 menggunakan python manage.py startapp < nama aplikasi >
 2. Menambahkan path mywatchlist sehingga pengguna dapat mengakses http://localhost:8000/mywatchlist
@@ -69,3 +69,9 @@ Membuat folder fixture berisi file initial_mywatchlist_data.json yang berisi
 - Menambahkan fitur return function berupa HttpResponse yang berisi data hasil query yang sudah diserialisasi dalam format data yang diminta
 6. Membuat routing sehingga data di atas dapat diakses melalui URL
 Mengimport fungasi yang telah dibuat pada urls.py dan menambahkan path url ke dalam urpatterns untuk mengakses fungasi yang sudah diimpor.
+
+# Screenshot Postman
+## JSON
+![postman json](../assets/pbp-tugas3-json.png)
+## XML
+![postman xml](../assets/pbp-tugas3-xml.png)
