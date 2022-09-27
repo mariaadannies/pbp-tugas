@@ -15,26 +15,26 @@ Form yang telah disubmit oleh user akan di POST jika CSRF token sesuai makan for
 
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 
-1. Membuat suatu aplikasi baru bernama todolist di proyek tugas Django yang sudah digunakan sebelumnya.
+1. Membuat suatu aplikasi baru bernama todolist di proyek tugas Django yang sudah digunakan sebelumnya.  
 Dengan python manage.py startapp todolist
 
-2. Menambahkan path todolist sehingga pengguna dapat mengakses http://localhost:8000/todolist.
+2. Menambahkan path todolist sehingga pengguna dapat mengakses http://localhost:8000/todolist.  
 Menambahkan path pada urls.py
 
-3. Membuat sebuah model Task
+3. Membuat sebuah model Task  
 Membuat model Task pada models.py
 
 4. Mengimplementasikan form registrasi, login, dan logout agar pengguna dapat menggunakan todolist dengan baik.
 
-5. Membuat halaman utama todolist yang memuat username pengguna, tombol Tambah Task Baru, tombol logout, serta tabel berisi tanggal pembuatan task, judul task, dan deskripsi task.
+5. Membuat halaman utama todolist yang memuat username pengguna, tombol Tambah Task Baru, tombol logout, serta tabel berisi tanggal pembuatan task, judul task, dan deskripsi task.  
 Membuat file html yang merupakan extend dari base.html
 
-6. Membuat halaman form untuk pembuatan task. Data yang perlu dimasukkan pengguna hanyalah judul task dan deskripsi task.
+6. Membuat halaman form untuk pembuatan task. Data yang perlu dimasukkan pengguna hanyalah judul task dan deskripsi task.  
 
-7. Membuat routing sehingga beberapa fungsi dapat diakses melalui URL
+7. Membuat routing sehingga beberapa fungsi dapat diakses melalui URL.  
 Menambahkan urlpattern pada urls.py 
 
-8. Melakukan deployment ke Heroku terhadap aplikasi yang sudah kamu buat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
+8. Melakukan deployment ke Heroku terhadap aplikasi yang sudah kamu buat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.  
 
 
-9. Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku.
+9. Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku.  
