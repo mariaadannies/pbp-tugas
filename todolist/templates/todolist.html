@@ -1,47 +1,82 @@
 {% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>wishlist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/todolist.css' %}">
+    {% endblock meta %}
+</head>
 
-{% block content %}
-<h5>Username: </h5>
-<b>{{username}}</b>
-<br> <br>
-<button><a href="{% url 'todolist:add_task' %}">Add Task</a></button>
+<body>
+    {% block content %}
 
 
-<table>
-    <tr>
-    <th>Tanggal Dibuat</th>
-    <th>Judul</th>
-    <th>Deskripsi</th>
-    <th>Status</th>
-    <th>Actions</th>
-    </tr>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #446DCA;">
+        <a class="navbar-brand" href="#">Welcome back, </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">{{username}}</a>
+            <a class="nav-item nav-link" href="{% url 'todolist:add_task' %} ">Add task</a>
+            <a class="nav-item nav-link" href="{% url 'todolist:logout' %}">Log out</a>
+          </div>
+        </div>
+
+        <a class="nav-item nav-link active text-white" href="#">Sesi terakhir: {{ last_login }}</a>
+
+      </nav>
+
+    <div class="row">
     {% for task in list_task %}
-    <tr>
-        <th>{{task.date}}</th>
-        <th>{{task.title}}</th>
-        <th>{{task.description}}</th>
-        {% if task.is_finished %}
-            <th>Done</th>
-        {% else %}
-            <th>In Progress</th>
-        {% endif %}
-        <th>
-            <form method="post" action="{% url 'todolist:toggle-task' task.id %}" >
-                {% csrf_token %}
-                <button class="btn btn-info btn-sm" type="submit" name="toggle_done">
-                    {% if task.is_finished %} Mark Not Done {% else %} Mark Done {% endif %}
-                </button>
-            </form>
-            <form method="post" action="{% url 'todolist:delete-task' task.id %}" >
-                {% csrf_token %}
-                <button class="btn btn-info btn-sm" type="submit" name="toggle_done">
-                    Delete
-                </button>
-            </form>
-        </th>
-    </tr>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    {% if task.is_finished %}
+                        <h5>Done</h5>
+                    {% else %}
+                        <h5>In Progress</h5>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{task.title}}</h5>
+                    <p class="card-text">{{task.description}}</p>
+                </div>
+                    
+                <div class="card-footer">
+                    <p class="card-text"><small class="text-muted">Task created {{task.date}}</small></p>
+                    <div class = "btn-toolbar pull-right">
+                        
+                        <form method="post" action="{% url 'todolist:toggle-task' task.id %}" >
+                            {% csrf_token %}
+                            <button class="btn text-white me-1" style="background-color: #446DCA;" type="submit" name="toggle_done">
+                                {% if task.is_finished %} Mark Not Done {% else %} Mark Done {% endif %}
+                            </button>
+                        </form>
+    
+                        <form method="post" action="{% url 'todolist:delete-task' task.id %}" >
+                            {% csrf_token %}
+                            <button class="btn text-white me-1" style="background-color: #446DCA;" type="submit" name="toggle_done">
+                                Delete
+                            </button>
+                        </form>
+
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     {% endfor %}
-</table>
-<h5>Sesi terakhir login: {{ last_login }}</h5>
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-{% endblock content %}
+    </div>
+    {% endblock content %}
+
+</body>
+</html>

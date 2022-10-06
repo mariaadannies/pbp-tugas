@@ -35,3 +35,105 @@ Menggunakan modelForm untuk pembuatan task yang selanjutnya disimpan dalam datab
 
 7. Membuat routing sehingga beberapa fungsi dapat diakses melalui URL.  
 Menambahkan urlpattern pada urls.py 
+
+## Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
+Internal CSS:  
+Internal CSS diletakkan di dalam bagian <head> pada halaman. Internal CSS hanya akan aktif pada halaman tersebut dan akan di-download setiap kali halaman dipanggil. CSS internal diletakkan di dalam tag <style></style>.
+
+Eksternal CSS:  
+perubahan apapun yang Anda buat pada file CSS akan tampil pada website Anda secara keseluruhan. File CSS eksternal biasanya diletakkan setelah bagian <head> pada halaman.
+Contoh, <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+## Jelaskan tag HTML5 yang kamu ketahui.
+<title>  
+Membuat judul pada halaman
+
+<body>  
+Membuat body dari halaman
+
+<h1> to <h6>  
+Membuat heading
+
+<p>  
+Membuat paragraf
+
+<form>	
+Membuat form yang digunakan untuk menerima input pengguna
+
+<button>	
+Membuat button
+
+<img>	
+Menyisipkan gambar
+
+<ul>	
+Membuat unordered list (list tanpa nomor)
+
+<ol>	
+Membuat ordered list (list dengan nomor)
+
+## Jelaskan tipe-tipe CSS selector yang kamu ketahui.
+1. Selektor Tag: memilih elemen berdasarkan tag
+2. Selektor Class: memilih elemen berdasarkan nama tag yang diberikan
+3. Selektor ID: memilih elemen berdasarkan id yang diberikan
+4. Selektor Atribut: memilih elemen berdasarkan atribut
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+1. Kustomisasi templat HTML yang telah dibuat pada Tugas 4 dengan menggunakan CSS atau CSS framework
+Melakukan kustomisasi dengan menggunakan templat yang sudah tersedia di internet :D
+    - Kustomisasi templat untuk halaman login, register, dan create-task semenarik mungkin  
+    Menambahkan kode berikut pada file html  
+    ```
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    ```
+    
+    - Kustomisasi halaman utama todo list menggunakan cards
+    Menambahkan kode berikut pada file html  
+    ```
+    <div class="row">
+    {% for task in list_task %}
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    {% if task.is_finished %}
+                        <h5>Done</h5>
+                    {% else %}
+                        <h5>In Progress</h5>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{task.title}}</h5>
+                    <p class="card-text">{{task.description}}</p>
+                </div>
+                    
+                <div class="card-footer">
+                    <p class="card-text"><small class="text-muted">Task created {{task.date}}</small></p>
+                    <div class = "btn-toolbar pull-right">
+                        
+                        <form method="post" action="{% url 'todolist:toggle-task' task.id %}" >
+                            {% csrf_token %}
+                            <button class="btn text-white me-1" style="background-color: #446DCA;" type="submit" name="toggle_done">
+                                {% if task.is_finished %} Mark Not Done {% else %} Mark Done {% endif %}
+                            </button>
+                        </form>
+    
+                        <form method="post" action="{% url 'todolist:delete-task' task.id %}" >
+                            {% csrf_token %}
+                            <button class="btn text-white me-1" style="background-color: #446DCA;" type="submit" name="toggle_done">
+                                Delete
+                            </button>
+                        </form>
+
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    ```
+
+2. Membuat keempat halaman yang dikustomisasi menjadi responsive
+Penggunaan Bootstrap sedah otomatis membuat halaman menjadi responsif

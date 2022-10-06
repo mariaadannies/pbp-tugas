@@ -1,45 +1,58 @@
 {% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    {% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    {% endblock meta %}
+</head>
 
-{% block meta %}
-<title>Login</title>
-{% endblock meta %}
+<body>
+    {% block content %}
+    <div class="form-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+                    <div class="form-container">
+                        <form method="POST" action="" class="form-horizontal">
+                            {% csrf_token %}
+                            <h3 class="title">Hi there.</h3>
+                            <span class="description">Login</span>
+                            <div class="form-group">
 
-{% block content %}
+                            <!-- Input username -->
+                            <input type="text" name="username" placeholder="Username" class="form-control">
+                            </div>
 
-<div class = "login">
+                            <div class="form-group">
+                                <!-- Input password -->
+                                <input type="password" name="password" placeholder="Password" class="form-control">
+                            </div>
 
-    <h1>Login</h1>
+                            {% if messages %}
+                                <div class="text-center text-lg-start mt-4 pt-2">
+                                    <ul>
+                                        {% for message in messages %}
+                                            <li>{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                            
+                            <button class="btn signin" type="submit" value="Login">Log in</button>
 
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
-
-</div>
-
-{% endblock content %}
+                        
+                            <span class="signup">or <a href="{% url 'todolist:register' %}">Register</a></span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+</body>
