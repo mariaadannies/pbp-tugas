@@ -41,35 +41,30 @@ Internal CSS:
 Internal CSS diletakkan di dalam bagian <head> pada halaman. Internal CSS hanya akan aktif pada halaman tersebut dan akan di-download setiap kali halaman dipanggil. CSS internal diletakkan di dalam tag <style></style>.
 
 Eksternal CSS:  
-perubahan apapun yang Anda buat pada file CSS akan tampil pada website Anda secara keseluruhan. File CSS eksternal biasanya diletakkan setelah bagian <head> pada halaman.
-Contoh, <link rel="stylesheet" href="{% static 'css/login.css' %}">
+perubahan apapun yang Anda buat pada file CSS akan tampil pada website Anda secara keseluruhan. File CSS eksternal biasanya diletakkan setelah bagian head pada halaman.
+Contoh, 
+```
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+```
 
 ## Jelaskan tag HTML5 yang kamu ketahui.
-< title >  
+1. title   
 Membuat judul pada halaman
-
-<body>  
+2. body   
 Membuat body dari halaman
-
-<h1> to <h6>  
+3. h1 sampai h6    
 Membuat heading
-
-<p>  
+4. p  
 Membuat paragraf
-
-<form>	
+5. form  
 Membuat form yang digunakan untuk menerima input pengguna
-
-<button>	
+6. button  	
 Membuat button
-
-<img>	
+7. img  
 Menyisipkan gambar
-
-<ul>	
+8. ul  	
 Membuat unordered list (list tanpa nomor)
-
-<ol>	
+9. ol  
 Membuat ordered list (list dengan nomor)
 
 ## Jelaskan tipe-tipe CSS selector yang kamu ketahui.
