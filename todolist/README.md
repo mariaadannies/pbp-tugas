@@ -45,7 +45,7 @@ perubahan apapun yang Anda buat pada file CSS akan tampil pada website Anda seca
 Contoh, <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
 ## Jelaskan tag HTML5 yang kamu ketahui.
-<title>  
+< title >  
 Membuat judul pada halaman
 
 <body>  
