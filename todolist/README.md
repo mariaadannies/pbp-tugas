@@ -62,7 +62,7 @@ Membuat form yang digunakan untuk menerima input pengguna
 Membuat button
 7. img  
 Menyisipkan gambar
-8. ul  	
+8. ul  
 Membuat unordered list (list tanpa nomor)
 9. ol  
 Membuat ordered list (list dengan nomor)
