@@ -44,7 +44,6 @@ def login_user(request):
     context = {}
     return render(request, 'login.html', context)
 
-
 def logout_user(request):
     logout(request)
     response = HttpResponseRedirect(reverse('todolist:login'))
@@ -71,7 +70,7 @@ def add_task(request):
             listing.user = request.user
             listing.save()
 
-            print('Berhasil nyimpan')
+            print('Berhasil menyimpan!')
             return HttpResponseRedirect(reverse('todolist:show_todolist'))
         except ValueError as e:
             print(e)
@@ -95,3 +94,35 @@ def toggle_task_finished(request, task_id):
         task.save()
 
         return redirect(reverse('todolist:show_todolist'))
+
+@login_required(login_url='/todolist/login/')
+def show_json(request):
+    task = Task.objects.filter(user=request.user)
+    data = serializers.serialize('json', task)
+
+    return HttpResponse(data, content_type='application/json')
+
+@login_required(login_url='/todolist/login/')
+def add_new_task(request):
+    if request.method == "POST":
+        data = json.loads(request.POST['data'])
+
+        new_task = Task(title=data["title"], description=data["description"])
+        new_task.save()
+
+        return HttpResponse(serializers.serialize("json", [new_task]), content_type="application/json")
+
+    return redirect('todolist:todolist_add')
+
+# def add_wishlist_item(request):
+#     if request.method == 'POST':
+#         nama_barang = request.POST.get("nama_barang")
+#         harga_barang = request.POST.get("harga_barang")
+#         deskripsi = request.POST.get("deskripsi")
+
+#         new_barang = BarangWishlist(nama_barang=nama_barang, harga_barang=harga_barang, deskripsi=deskripsi)
+#         new_barang.save()
+
+#         return HttpResponse(b"CREATED", status=201)
+
+#     return HttpResponseNotFound()
