@@ -11,6 +11,9 @@ from django.shortcuts import get_object_or_404
 from todolist.forms import TaskForm
 from .models import Task
 import datetime
+import json
+from django.shortcuts import get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def register(request):
@@ -107,12 +110,32 @@ def add_new_task(request):
     if request.method == "POST":
         data = json.loads(request.POST['data'])
 
-        new_task = Task(title=data["title"], description=data["description"])
+        new_task = Task(title=data["title"], description=data["description"], user=request.user)
         new_task.save()
 
         return HttpResponse(serializers.serialize("json", [new_task]), content_type="application/json")
 
-    return redirect('todolist:todolist_add')
+    return HttpResponse()
+
+@login_required(login_url='/todolist/login/')
+@csrf_exempt
+def delete_new_task(request, id):
+    if request.method == "POST":
+        task = get_object_or_404(Task, pk=id, user=request.user)
+        task.delete()
+
+    return HttpResponse()
+
+@login_required(login_url='/todolist/login/')
+@csrf_exempt
+def update_new_task(request, id):
+    if request.method == "POST":
+        task = get_object_or_404(Task, pk=id, user=request.user)
+        task.is_finished = not task.is_finished
+        task.save()
+        
+    return HttpResponse()
+
 
 # def add_wishlist_item(request):
 #     if request.method == 'POST':
